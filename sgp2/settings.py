@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'q95^7()4!mi#5$s55%mnp96rxm_5lkb=-yh+lxpv5ai65y-qd%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['dsa-analysis.herokuapp.com','127.0.0.1', 'localhost']
 

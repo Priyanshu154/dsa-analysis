@@ -32,6 +32,9 @@ def logout_view(request):
 
 def register_view(request):
     #register the user
+
+    if request.user.is_authenticated:
+        return redirect('codeforces_handle')
     if( request.method != 'POST' ):  return render( request, 'build/index.html' )
     print( request.POST.get( 'password1' ) )
     form = forms.UserCreationForm(request.POST)
@@ -46,6 +49,8 @@ def register_view(request):
         return render( request, 'build/index.html',{ 'form': form.errors.as_json() } )
 
 def login_view(request):
+    if request.user.is_authenticated:
+        return redirect('codeforces_handle')
     form = forms.AuthenticationForm(request.POST)
     if request.method == "POST":
         user = authenticate(request, username= request.POST.get('username'), password= request.POST.get('password'))
@@ -98,3 +103,7 @@ def get_problems(request):
         arr[len(arr)-1]['url'] = res[tag]['url']
     return Response( arr )
 
+def home_page(request):
+    if request.user.is_authenticated:
+        return redirect('codeforces_handle')
+    return redirect('register')

@@ -10,5 +10,5 @@ urlpatterns = [
     path('dsa', views.index,name='dsa'),
     path('codeforces_handle',views.index, name ='codeforces_handle'),
     path('tags',views.index, name ='tags'),
-    path('',views.index),
+    path('',views.home_page),
 ]

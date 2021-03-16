@@ -68,7 +68,7 @@ async function fetch_tags( user_handle, days_before = 60 ){
     return result;
 }
 async function fetch_problems( tags_to_fetch , user_rating,delta=100,max_prob_per_tag=20){
-    let ans3 = await req( 'post', 'http://localhost:8000/get_problems',
+    let ans3 = await req( 'post', 'https://dsa-analysis.herokuapp.com/get_problems/get_problems',
         {
             tags   :  tags_to_fetch,
             maxQue :  max_prob_per_tag,

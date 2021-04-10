@@ -65,7 +65,7 @@ def login_view(request):
         print( form.errors )
         return render( request, 'build/index.html')
 
-#API
+#API will take online post links
 @api_view( ['POST'] )
 def get_problems(request):
     tags = request.data[  'tags'  ]
